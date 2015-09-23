@@ -1,0 +1,196 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section/*{display:block}*/
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
+@font-face{font-family:'UniSans';src:url(../assets/templates/horoscope/fonts/unisans-heavy-webfont.eot);src:url(../assets/templates/horoscope/fonts/unisans-heavy-webfont-.eot#iefix) format("embedded-opentype"),url(../assets/templates/horoscope/fonts/unisans-heavy-webfont.woff2) format("woff2"),url(../assets/templates/horoscope/fonts/unisans-heavy-webfont.woff) format("woff"),url(../assets/templates/horoscope/fonts/unisans-heavy-webfont.ttf) format("truetype"),url(../assets/templates/horoscope/fonts/unisans-heavy-webfont.svg#uni_sansheavy) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:'UniSans';src:url(../assets/templates/horoscope/fonts/unisans-thin-webfont.eot);src:url(../assets/templates/horoscope/fonts/unisans-thin-webfont-.eot#iefix) format("embedded-opentype"),url(../assets/templates/horoscope/fonts/unisans-thin-webfont.woff2) format("woff2"),url(../assets/templates/horoscope/fonts/unisans-thin-webfont.woff) format("woff"),url(../assets/templates/horoscope/fonts/unisans-thin-webfont.ttf) format("truetype"),url(../assets/templates/horoscope/fonts/unisans-thin-webfont.svg#uni_sansthin) format("svg");font-weight:200;font-style:normal}
+@font-face{font-family:'ProximaNova';src:url(../assets/templates/horoscope/fonts/proximanova-reg-webfont.eot);src:url(../assets/templates/horoscope/fonts/proximanova-reg-webfont-.eot#iefix) format("embedded-opentype"),url(../assets/templates/horoscope/fonts/proximanova-reg-webfont.woff2) format("woff2"),url(../assets/templates/horoscope/fonts/proximanova-reg-webfont.woff) format("woff"),url(../assets/templates/horoscope/fonts/proximanova-reg-webfont.ttf) format("truetype"),url(../assets/templates/horoscope/fonts/proximanova-reg-webfont.svg#proxima_nova_rgregular) format("svg");font-weight:400;font-style:normal}
+@font-face{font-family:'icomoon';src:url(../assets/templates/horoscope/fonts/icomoon--do52ey.eot);src:url(../assets/templates/horoscope/fonts/icomoon-.eot#iefix-do52ey) format("embedded-opentype"),url(../assets/templates/horoscope/fonts/icomoon--do52ey.woff) format("woff"),url(../assets/templates/horoscope/fonts/icomoon--do52ey.ttf) format("truetype"),url(../assets/templates/horoscope/fonts/icomoon--do52ey.svg#icomoon) format("svg");font-weight:400;font-style:normal}
+[class^="icon-"],[class*=" icon-"]{font-family:'icomoon';speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-aquarius:before{content:"\e600"}
+.icon-aries:before{content:"\e601"}
+.icon-cancer:before{content:"\e602"}
+.icon-capricorn:before{content:"\e603"}
+.icon-gemini:before{content:"\e604"}
+.icon-leo:before{content:"\e605"}
+.icon-libra:before{content:"\e606"}
+.icon-pisces:before{content:"\e607"}
+.icon-sagittarius:before{content:"\e608"}
+.icon-scorpio:before{content:"\e609"}
+.icon-taurus:before{content:"\e60a"}
+.icon-virgo:before{content:"\e60b"}
+html{box-sizing:border-box}
+*,:before,:after{box-sizing:inherit}
+html,body{height:100%;}
+body{background:#13293e;/*overflow:hidden*/;font:14px/16px ProximaNova,Helvetica,Arial,sans-serif;color:#fff}
+a{color:inherit;text-decoration:none}
+.tbox{display:table;width:100%;height:100%;padding: 0% 0% 0% 0%;margin:0% 0% 0% 0%;}
+.cbox{display:table-cell;vertical-align:middle;text-align:center}
+h1{font:30px/30px UniSans,Helvetica,Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;margin:10px 0}
+.lines{margin:10px 0}
+.logo{position:absolute;top:21px;left:222px}
+bg{position:absolute;top:50%;left:50%;margin-top:-1199px;margin-left:-1497px;height:2398px;width:2996px;background:url(../assets/templates/horoscope/img/bg.jpg) no-repeat center;z-index:1;-webkit-animation:rotate 80s linear infinite;animation:rotate 80s linear infinite}
+*/
+.bg{position:fixed;top:-90%;left:0%;margin-top:0%;margin-left:-5%;height:300%;width:110%;background:url(../assets/templates/horoscope/img/bg.jpg) no-repeat center;z-index:1;-webkit-animation:rotate 80s linear infinite;animation:rotate 80s linear infinite}
+
+@-webkit-keyframes rotate {
+0%{-webkit-transform:rotate(0deg)}
+100%{-webkit-transform:rotate(360deg)}
+}
+@keyframes rotate {
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+.main{position:absolute;top:0;left:0;width:100%;height:97%;z-index:2}
+.start{height:446px;padding:45px 0 0;background:url(../assets/templates/horoscope/img/start-bg.png) no-repeat center}
+.start .start-link{font:14px/16px UniSans,Helvetica,Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;display:inline-block;border:1px solid #fff;border-radius:30px;width:192px;padding:12px 0;margin-top:20px;transition:all .4s ease}
+.start .start-link:hover{background:#fff;color:#1b90a3}
+.start{display:none}
+.choose{height:510px;background:url(../assets/templates/horoscope/img/choose-bg.png) center no-repeat}
+.choose .zodiac-list{color:#10bed5;width:510px;height:100%;margin:0 auto;position:relative}
+.choose .zodiac-list li{position:absolute;text-align:center;width:50px}
+.choose .zodiac-list li a{font-size:38px;position:relative;display:block;height:100%;transition:color .4s ease}
+.choose .zodiac-list li a .shadow{box-shadow:0 0 36px 18px rgba(16,172,188,0.75);border-radius:100%;position:absolute;top:50%;left:50%;opacity:0;z-index:1;transition:opacity .4s ease}
+.choose .zodiac-list li a:hover,.choose .zodiac-list li a.active{color:#fff}
+.choose .zodiac-list li a.active .shadow,.choose .zodiac-list li a:hover .shadow{opacity:1}
+.choose .zodiac-list li a i{z-index:2;position:relative}
+.choose .zodiac-list .capricorn{left:50%;margin-left:-25px;top:5%}
+.choose .zodiac-list .sagittarius{left:66%;top:11%}
+.choose .zodiac-list .scorpio{left:81%;top:25%}
+.choose .zodiac-list .libra{left:86%;top:50%;margin-top:-19px}
+.choose .zodiac-list .virgo{left:81%;top:67%}
+.choose .zodiac-list .leo{left:66%;top:82%}
+.choose .zodiac-list .cancer{left:50%;margin-left:-25px;top:87%}
+.choose .zodiac-list .gemini{top:82%;left:25%}
+.choose .zodiac-list .taurus{top:67%;left:11%}
+.choose .zodiac-list .aries{top:50%;margin-top:-19px;left:5%}
+.choose .zodiac-list .pisces{top:25%;left:11%}
+.choose .zodiac-list .aquarius{top:11%;left:25%}
+.choose .sign{padding-top:28px;position:absolute;top:65%;/* 50%; */left:50%;height:210px;width:210px;margin-top:-105px;margin-left:-105px}
+.choose .sign h2{font-size:20px;font-family:'UniSans';font-weight:200;text-transform:uppercase;color:#21435d}
+.choose .sign .lines{margin:20px 0}
+.choose .sign .zodiac-sign h3{font-family:'UniSans';font-size:30px;text-transform:uppercase;letter-spacing:1px;margin-bottom:25px}
+.choose .sign-block{display:none}
+.choose .sign-block.active{display:block}
+.choose{display:none}
+.predictions-block .prediction{border:1px solid rgba(255,255,255,.3);border-radius:190px 30px 30px 190px;width:920px;height:395px;margin:0 auto;padding:15px;display:none}
+.predictions-block .prediction:after{content:'';display:block;clear:both}
+.predictions-block .prediction .img-holder{float:left;border:2px dotted rgba(255,255,255,.3);border-radius:100%;padding:15px;margin-right:15px}
+.predictions-block .text{text-align:left;height:100%;position:relative;width:510px;float:left}
+.predictions-block .text .zodiac-logo{position:absolute;top:0;right:0;font-size:30px}
+.predictions-block .prediction .date{font-size:14px;opacity:.5;font-style:italic;margin-bottom:25px}
+.predictions-block .prediction p{font-size:14px;margin-bottom:15px}
+.predictions-block .prediction .return{font-family:'UniSans';font-size:12px;letter-spacing:1px;text-transform:uppercase;position:absolute;left:0;bottom:8px;background:url(../img/return.png) left center no-repeat;padding-left:14px}
+.predictions-block .prediction .share{position:absolute;bottom:0;right:0}
+.predictions-block .prediction .share .share-text{font-family:'UniSans';font-size:12px;letter-spacing:1px;text-transform:uppercase;display:inline-block;vertical-align:middle}
+.predictions-block .prediction .share a{display:inline-block;width:30px;height:30px;vertical-align:middle;margin-left:10px;border-radius:100%}
+.predictions-block .prediction .share a:hover{border:1px solid rgba(255,255,255,.3)}
+.predictions-block .prediction .share .fb-share{background:url(../assets/templates/horoscope/img/social/facebook.png) no-repeat center}
+.predictions-block .prediction .share .twitter-share{background:url(../assets/templates/horoscope/img/social/twitter.png) no-repeat center}
+.predictions-block .prediction .share .google-share{background:url(../assets/templates/horoscope/img/social/google.png) no-repeat center}
+
+
+
+#ki {height: 100%;width: 100%;}
+
+
+#cont {padding: 13% 0% 0% 0%;margin:0% 10% 0% 16% }
+#kont2 {padding: 0% 0% 10% 0%;margin:0% 10% 0% 6% 
+
+      
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navigation {
+  z-index: 999;
+  position: relative;
+   padding: 5% 0% 0% 33%;
+}
+.navigation .sf-menu {
+  z-index: 990;
+  text-align: center;
+  position: relative;
+}
+.navigation nav {
+  position: relative;
+  padding: 0;
+}
+.select-menu {
+  display: none !important;
+}
+.sf-menu ul {
+  position: absolute;
+  top: -999px;
+  display: none;
+}
+.sf-menu > li > ul > li {
+  float: none;
+  position: static;
+}
+.sf-menu > li {
+  float: left;
+  font-weight: 300;
+  position: relative;
+  font-size: 18px;
+  line-height: 22px;
+}
+.sf-menu > li + li {
+  margin-left: 43px;
+}
+.sf-menu > li + li:after {
+  content: '';
+  background: url(../images/menu_sep.png) 0 0 no-repeat;
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  left: -20px;
+  top: 10px;
+}
+.sf-menu > li > a {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+}
+.sf-menu > li > a.sf-with-ul:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  bottom: 15px;
+  left: 50%;
+  bottom: -5px;
+  pointer-events: none;
+  z-index: 999;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3px 3px 0 3px;
+  border-color: #fff transparent transparent transparent;
+}
+.sf-menu > li.sfHover > a,
+.sf-menu > li.current > a,
+.sf-menu > li > a:hover {
+  color: #00b1ba;
+}
+
+
+
